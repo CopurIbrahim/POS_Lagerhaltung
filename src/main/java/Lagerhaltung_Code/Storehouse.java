@@ -6,13 +6,36 @@ public class Storehouse {
 	private int row;
 	private int col;
 	
+	private Product pro;
+	
 
 	
 	
 	public Storehouse(int row, int col) {
 		this.row = row;
-		this.col = col;		
+		this.col = col;
+		this.pro = new Product();
 	}
+	
+	
+	public void store() {
+		Product [][] products = new Product [this.row][this.col];
+		
+		for (int r = 0; r < products.length; r++) {				
+			for (int c = 0; c < products.length; c++) {
+				products [r][c] = new Product("Ibrahim Copue", "Ahmet Ulas");
+			}
+		}
+		
+		
+		for (int r = 0; r < products.length; r++) {
+			for (int c = 0; c < products.length; c++) {
+				System.out.println(products [r][c]);
+			}
+		}
+	}
+	
+	
 	
 	/*
 	public void lagerArray() {

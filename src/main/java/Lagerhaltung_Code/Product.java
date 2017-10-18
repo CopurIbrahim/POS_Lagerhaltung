@@ -8,7 +8,9 @@ public class Product {
 	private double price;
 	private String supplier;
 	
-	
+	public Product() {
+		
+	}
 	
 	
 	public Product(int id, String title, int packaging, double price, String supplier) {
@@ -20,10 +22,10 @@ public class Product {
 		this.supplier = supplier;
 	}
 	
-	public Product(int id, int packaging)
+	public Product(String id, String packaging)
 	{
-		this.id = id;
-		this.packaging = packaging;
+		this.title = id;
+		this.supplier = packaging;
 	}
 	
 
@@ -31,7 +33,7 @@ public class Product {
 
 	
 	public String toString() {
-		return this.getTitle() + this.getId();
+		return this.getTitle() + this.getSupplier();
 	}
 	
 

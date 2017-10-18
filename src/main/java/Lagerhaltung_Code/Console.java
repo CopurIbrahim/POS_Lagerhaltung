@@ -15,6 +15,7 @@ public class Console {
 	
 	public void displayMenue() {
 		this.output.startMenue();
+		this.store.store();
 		//this.chooseCommand("Monday");			
 	}
 

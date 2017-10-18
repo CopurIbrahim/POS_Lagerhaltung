@@ -12,5 +12,8 @@ public class ConsoleOutput {
 		System.out.println("Lagerverwaltungsprogramm ~MYCOP~ mittels CLI");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
+	
+	
+	
 
 }
