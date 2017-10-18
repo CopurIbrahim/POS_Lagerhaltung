@@ -5,58 +5,80 @@ public class Storehouse {
 	
 	private int row;
 	private int col;
+	private Product[][] productList;
 	
-	private Product pro;
-	
-
-	
+	public Storehouse() {
+		
+	}
 	
 	public Storehouse(int row, int col) {
 		this.row = row;
 		this.col = col;
-		this.pro = new Product();
+		this.productList = new Product[row][col];
 	}
 	
 	
-	public void store() {
-		Product [][] products = new Product [this.row][this.col];
-		
-		for (int r = 0; r < products.length; r++) {				
-			for (int c = 0; c < products.length; c++) {
-				products [r][c] = new Product("Ibrahim Copue", "Ahmet Ulas");
-			}
-		}
-		
-		
-		for (int r = 0; r < products.length; r++) {
-			for (int c = 0; c < products.length; c++) {
-				System.out.println(products [r][c]);
-			}
-		}
-	}
+	public void initializeProductList() {
+
+        for (int r = 0; r < this.row; r++) {
+            for(int c = 0; c < this.col; c++) {
+                this.productList[r][c] = null;
+            }
+        }
+    }
+	
+	
+	public void configureNewStorehouse(int row, int column) {
+        this.row = row;
+        this.col = column;
+        this.productList = new Product[this.row][this.col];
+        this.initializeProductList();
+    }
 	
 	
 	
-	/*
-	public void lagerArray() {
+	public void showStorehouse() {
+        for(int r = 0; r < this.row ; r++) {
+            
+        	for (int c = 0; c < this.col; c++) {
+                
+        		System.out.print("||");               
+                if(this.productList[r][c] != null) {
+                    System.out.print("  "+this.productList[r][c].getTitle()+"  ");
+                } else {
+                    System.out.print("  "+"Leer"+"  ");
+                }
+            }
+            System.out.println("||" + "\n");
+
+        }
+        System.out.println("\n");
+    }
 	
-		Product [][] dimo = new Product [this.row][this.col];
-		
-		for (int row = 0; row < dimo.length; row++) {
-			for (int col = 0; col < dimo[0].length; col++) {
-				dimo[row][col] = new Product( row, col);
-			}
-		}
-		
-		for ( int row = 0; row < dimo.length; row++) {
-			for (int col = 0; col < dimo[0].length; col++) {
-				System.out.println( dimo [row][col] );
-			}
-		}
 	
-	}
-	*/
-	
+	public void addProduct(Product product) {
+        int a = 0;
+        int b = 0;
+        int nummer = 000;
+
+        for(int r = 0; r < this.row; r++) {
+            
+        	for (int c = 0; c < this.col; c++) {
+                if(this.productList[r][c] == null){
+                    product.setPosition(b);
+                    product.setId(nummer);
+                    this.productList[r][c] = product;
+                    return;
+                }
+                b++;
+                a = b;
+                nummer++;
+            }
+            a++;
+        }
+    }
+
+
 
 	/*
 	public boolean addProduct(Product product) {
@@ -67,7 +89,22 @@ public class Storehouse {
 		}
 		return false;
 	}
+	*/
 	
+	
+	public void getProductPosition(int pos) {
+        for(int r = 0; r < this.row ; r++) {
+            for (int c = 0; c < this.col; c++) {
+                if(this.productList[r][c] != null && pos == this.productList[r][c].getPosition()){
+                    System.out.println(this.productList[r][c].toString());
+                    return;
+                }
+            }
+        }
+    }
+	
+	
+	/*
 	public boolean checkIdExisting(int id) {
 		
 		for(int i = 0; i < productList.size(); i++) {
@@ -79,8 +116,6 @@ public class Storehouse {
 	}
 	*/
 	
-	
-	
-	
+		
 
 }

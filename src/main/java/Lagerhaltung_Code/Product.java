@@ -7,6 +7,7 @@ public class Product {
 	private int packaging;
 	private double price;
 	private String supplier;
+	private int position;
 	
 	public Product() {
 		
@@ -85,6 +86,15 @@ public class Product {
 	public void setSupplier(String supplier) {
 		this.supplier = supplier;
 	}
+	
+	
+	public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
 	
 	
 	
