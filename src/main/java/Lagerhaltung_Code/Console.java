@@ -1,10 +1,13 @@
 package Lagerhaltung_Code;
 
+import java.util.Scanner;
+
 public class Console {
 	
 	private ConsoleInput input;
 	private ConsoleOutput output;
 	private Storehouse store;
+	private Scanner scanner;
 	
 	public Console() {
 		this.input = new ConsoleInput();
@@ -15,21 +18,15 @@ public class Console {
 	
 	public void displayMenue() {
 		this.output.startMenue();
-		this.store.showStorehouse();
-		//this.chooseCommand("Monday");			
+		this.input.getInputString();
+		this.displayCommandMenue();
+	}
+	
+	
+	public void displayCommandMenue() {
 	}
 
-	/*
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
+	/*	
 	public void chooseCommand(String command) {
 	   
 	     switch (command) {
