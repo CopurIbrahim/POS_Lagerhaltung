@@ -20,6 +20,16 @@ public class Console {
 	}
 
 	/*
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	public void chooseCommand(String command) {
 	   
 	     switch (command) {
