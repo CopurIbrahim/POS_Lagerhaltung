@@ -9,12 +9,13 @@ public class Console {
 	public Console() {
 		this.input = new ConsoleInput();
 		this.output = new ConsoleOutput();
-		this.store = new Storehouse();
+		this.store = new Storehouse(4,4);
 	}
 	
 	
 	public void displayMenue() {
 		this.output.startMenue();
+		this.store.showStorehouse();
 		//this.chooseCommand("Monday");			
 	}
 
