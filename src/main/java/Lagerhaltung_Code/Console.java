@@ -12,18 +12,22 @@ public class Console {
 	public Console() {
 		this.input = new ConsoleInput();
 		this.output = new ConsoleOutput();
+		this.scanner = new Scanner(System.in);
 		this.store = new Storehouse(4,4);
 	}
 	
 	
 	public void displayMenue() {
 		this.output.startMenue();
-		this.input.getInputString();
-		this.displayCommandMenue();
+		this.displayCommand();
 	}
 	
 	
-	public void displayCommandMenue() {
+	public void displayCommand() {
+		String eingabe = scanner.nextLine();
+		if (eingabe.equals("hilfe")) {
+			this.output.startBefehle();
+		}
 	}
 
 	/*	
