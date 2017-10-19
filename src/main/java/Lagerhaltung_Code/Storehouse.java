@@ -38,6 +38,8 @@ public class Storehouse {
 	
 	
 	public void showStorehouse() {
+		System.out.println();
+		System.out.println("Lagerbestand:");
         for(int r = 0; r < this.row ; r++) {
             
         	for (int c = 0; c < this.col; c++) {
